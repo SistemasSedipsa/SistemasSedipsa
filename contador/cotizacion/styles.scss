@@ -1,0 +1,273 @@
+$primary-color: #007bff;
+$secondary-color: #f4f4f4;
+$text-color: #333;
+$button-bg: $primary-color;
+$button-hover-bg: darken($primary-color, 10%);
+$border-radius: 10px;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $secondary-color;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container {
+    width: 210mm;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: $border-radius;
+    text-align: center;
+    align-items: center;
+}
+
+h2 {
+    color: $text-color;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 5px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: -15px;
+    display: block;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    background-color: $button-bg;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $button-hover-bg;
+    }
+}
+
+#cotizacion-generada {
+    margin-top: 20px;
+    background-color: $secondary-color;
+    padding: 15px;
+    border-radius: $border-radius;
+    border: 1px solid lighten($primary-color, 40%);
+}
+
+section {
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+input[readonly] {
+    background-color: #f9f9f9;
+}
+
+select {
+    width: 250px; // Ajusta este valor al tamaño que prefieras
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        border-color: #0066cc;
+        outline: none;
+    }
+}
+
+/* Estilo minimalista y contrastante para la tabla */
+.examinacion {
+    margin-top: 0px;
+    font-size: 12px;
+    // table-layout: fixed;
+}
+
+.examinacion th {
+    padding: 2px;
+    background-color: #BDD7EE;
+    border-color: #000000;
+    text-align: center;
+}
+
+.examinacion td {
+    border-color: #000000;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Alternar colores para filas pares */
+.examinacion tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover para las filas */
+.examinacion tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Estilo para el botón de agregar descripción */
+#agregar-descripcion {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 12px;
+}
+
+#agregar-descripcion:hover {
+    background-color: #ffffff;
+    color: #28a745;
+}
+
+li {
+    list-style-type: none;
+    padding: 1px;
+}
+
+.eliminar-fila {
+    background-color: transparent;
+    border: none;
+    color: red;
+    /* Color rojo para indicar eliminación */
+    font-size: 16px;
+    /* Tamaño del botón */
+    cursor: pointer;
+}
+
+.eliminar-fila:hover {
+    color: darkred;
+    /* Cambia el color al pasar el ratón por encima */
+}
+
+.eliminar-fila:focus {
+    outline: none;
+    /* Sin borde de enfoque */
+}
+
+section.form-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="number"]:focus {
+    border-color: #4CAF50;
+}
+
+button#agregar-descripcion {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button#agregar-descripcion:hover {
+    background-color: #45a049;
+}
+.boton-estilizado {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-estilizado:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+button#prev-to-step-1{
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+}
+button#next-to-step-3{
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+}
+button#prev-to-step-2{
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+}
+button#next-to-step-2{
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+}

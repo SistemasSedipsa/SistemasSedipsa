@@ -1,0 +1,7 @@
+{
+    "name": "vendor/project",
+    "require": {
+        "moonshine/moonshine": "^2.20",
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

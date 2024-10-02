@@ -1,0 +1,15 @@
+.chart-container {
+    width: 45%;
+    margin: 10px;
+    float: left;
+}
+
+.chart {
+    width: 100% !important;
+    height: 250px !important; /* Ajusta la altura según lo necesites */
+}
+
+/* Asegúrate de que el contenedor principal esté limpio */
+main {
+    overflow: hidden;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña</title>
+
+    <!-- Estilos CSS y librerías -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">        
+    <link rel="stylesheet" type="text/css" href="fuentes/iconic/css/material-design-iconic-font.min.css">
+</head>
+
+<body>
+    <div class="container-login">
+        <div class="wrap-login">
+            <!-- Formulario de cambio de contraseña -->
+            <form class="login-form validate-form" id="formCambiarPassword" autocomplete="off">
+                <span class="login-form-title">CAMBIAR CONTRASEÑA</span>
+
+                <div class="wrap-input100" data-validate="Usuario requerido">
+                    <input class="input100" type="text" id="usuario" name="usuario" placeholder="Usuario" autocomplete="off">
+                    <span class="focus-efecto"></span>
+                </div>
+
+                <div class="wrap-input100" data-validate="Nueva contraseña requerida">
+                    <input class="input100" type="password" id="nuevaPassword" name="nuevaPassword" placeholder="Nueva Contraseña" autocomplete="new-password">
+                    <span class="focus-efecto"></span>
+                </div>
+
+                <div class="container-login-form-btn">
+                    <div class="wrap-login-form-btn">
+                        <div class="login-form-bgbtn"></div>
+                        <button type="submit" id="btnCambiarContraseña" class="login-form-btn">CAMBIAR CONTRASEÑA</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <script src="jquery/jquery-3.3.1.min.js"></script>    
+    <script src="bootstrap/js/bootstrap.min.js"></script>    
+    <script src="popper/popper.min.js"></script>    
+    <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>    
+
+    <!-- Script para manejar el cambio de contraseña -->
+    <script>
+        $(document).ready(function() {
+            $('#formCambiarPassword').submit(function(event) {
+                event.preventDefault(); // Prevenir el envío predeterminado del formulario
+                
+                var usuario = $('#usuario').val();
+                var nuevaPassword = $('#nuevaPassword').val();
+                
+                // Validación básica del formulario
+                if(usuario.trim() == '' || nuevaPassword.trim() == '') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Por favor, completa todos los campos.'
+                    });
+                    return;
+                }
+                
+                // Envío de datos mediante AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: 'cambiar_pass.php', // Archivo PHP que procesará la solicitud
+                    data: { usuario: usuario, nuevaPassword: nuevaPassword },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status) {
+                            // Contraseña cambiada exitosamente
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Contraseña Cambiada',
+                                text: response.message
+                            }).then(function() {
+                                window.location.href = 'index.php'; // Redirigir a la página de login
+                            });
+                        } else {
+                            // Mostrar mensaje de error
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // Mostrar mensaje de error genérico
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde.'
+                        });
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Fuente personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+body {
+    font-family: 'Merriweather', serif;
+    background-size: 100% 100%;
+    color: #FFD700;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.head {
+    padding-top: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; Centra el contenido verticalmente */
+    padding: 10px 20px;
+    background: #333;
+    width: 100%;
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.content {
+    padding: 50px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background: #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 100px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAiIHZpZXdCb3g9IjAgMCAxNjAwIDEwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAsMDBIMTQyMUMxNTQ5LjQsMCAxNjAwLDU0LjYsMTYwMCw1NC42VjEwMEgwVjBMMS42LDAwWiIgZmlsbD0iI0ZGRFgwMCIvPgo8L3N2Zz4=') no-repeat bottom;
+    background-size: cover;
+    z-index: -1;
+}
+
+.header .title, .about .title, .contact .title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.header .title::after, .about .title::after, .contact .title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #FFD700;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+.header p, .about p, .contact p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Asegúrate de que el body y html ocupen toda la altura disponible */
+html, body {
+    height: 100%;
+    margin: 0;
+}

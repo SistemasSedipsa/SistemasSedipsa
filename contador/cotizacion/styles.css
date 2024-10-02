@@ -1,0 +1,599 @@
+@page {
+    size: A4;
+    margin: 20mm;
+}
+
+/* Estilos generales */
+body {
+    /* font-family: Arial, sans-serif; */
+    font-size: 10px;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+table, th, td {
+    page-break-inside: avoid;
+    font-size: 11px;
+}
+
+/* Tamaño de la página: A4 (210mm x 297mm) */
+.container {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    position: relative;
+    
+}
+
+/* Encabezado */
+.header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+.table-contact-info {
+    margin-top: 100px;
+    position: absolute;
+    list-style-type: none;
+}
+
+.table-contact {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: left; /* Opcional, para centrar el contenido */
+    
+}
+/* Contenedor para imágenes y líneas */
+.header-content {
+    display: flex;
+    align-items: flex-start; /* Alinea verticalmente al inicio del contenedor */
+}
+
+/* Logo e imágenes en la esquina superior izquierda */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 110px;
+    margin-bottom: 2px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Líneas perpendiculares sin espacio entre ellas */
+.line-container {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 10px; /* Espacio entre las imágenes y las líneas */
+}
+
+.line {
+    width: 3px; /* Ancho reducido de la línea */
+    height: 90px;
+    margin-top: -7px;
+}
+
+.line.green {
+    background-color: #3b9f3b;
+}
+
+.line.orange {
+    background-color: #ff7a00;
+}
+
+.line-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2px; /* Ajuste de la posición para que coincida con el nuevo ancho */
+    width: 2px; /* Ancho reducido de la línea */
+    height: 100px;
+    /* background-color: #ff7a00; */
+    z-index: -1; /* Manda la línea detrás para que se superponga correctamente */
+}
+
+/* Caja de contacto */
+.contact-box {
+    font-size: 10px;
+    margin-top: -15px;
+    text-align: left;
+    margin-left: 15px; /* Espacio entre las líneas y la caja de contacto */
+}
+.contact-box p{
+    line-height: 6px;
+}
+.contact-box img.contacto {
+    width: 240px; /* Permite que la imagen mantenga sus proporciones */
+    height: auto; /* Permite que la imagen mantenga sus proporciones */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    margin-top: 10px; /* Espacio arriba de la imagen si es necesario */
+}
+
+/* Contenedor de tablas */
+.table-container {
+    position: absolute; /* Para que se posicione con respecto al .header */
+    top: 0; /* Alineado a la parte superior */
+    right: 0; /* Alineado a la derecha */
+    display: flex;
+    flex-direction: column; /* Alinea las tablas verticalmente */
+    gap: 0; /* Elimina el espacio entre las tablas */
+}
+
+/* Estilo común para cada tabla */
+.styled-table {
+    width: 100%; /* Ajusta las tablas al ancho del contenedor */
+    max-width: 200px; /* Aumenta el ancho máximo de cada tabla */
+    border-collapse: collapse;
+    font-size: 14px; /* Aumenta el tamaño de la fuente */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #000000; /* Borde fino */
+    border-color: #000000;
+    text-align: center; /* Centra el contenido de las celdas */
+    margin: -1px; /* Elimina el margen entre las tablas */
+    table-layout: fixed;
+}
+
+.contacto{
+    width: 100%; /* Ajusta las tablas al ancho del contenedor */
+    max-width: 300px; /* Aumenta el ancho máximo de cada tabla */
+    border-collapse: collapse;
+    font-size: 14px; /* Aumenta el tamaño de la fuente */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde fino */
+    border-color: transparent;
+    text-align: center; /* Centra el contenido de las celdas */
+    margin: -1px; /* Elimina el margen entre las tablas */
+}
+
+/* Celdas de la tabla */
+.styled-table td, .styled-table th {
+    padding: 1px; /* Aumenta el relleno interno de las celdas */
+    border: 1px solid #000000; /* Borde ligero alrededor de las celdas */
+    word-wrap: break-word; /* Permite que las palabras largas se ajusten */
+    text-align: center; /* Centra el contenido de las celdas */
+}
+
+.contacto th {
+    background-color: #BDD7EE;
+}
+.styled-table th {
+    background-color: #BDD7EE;
+}
+
+/* Encabezado de la tabla */
+.styled-table .header {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center; /* Centra el texto del encabezado */
+}
+
+/* Información general */
+.styled-table .info {
+    background-color: #fff;
+    text-align: center; /* Centra el texto de la información */
+}
+
+/* Resaltado */
+.styled-table .highlight-bold {
+    font-weight: bold;
+    color: white;
+    text-align: center; /* Centra el texto resaltado */
+}
+
+.table-column-container {
+    margin-top: -11px;
+    margin-left: 90px;
+}
+.table-importe li {
+    display: flex; /* Hace que el contenido del <li> se distribuya en línea */
+    justify-content: space-between; /* El texto y el resultado estarán en extremos opuestos */
+    padding: 5px 0; /* Añade algo de espacio entre los elementos */
+    font-weight: bold;
+}
+
+.table-importe span {
+    text-align: right; /* Asegura que el resultado (el span) esté alineado a la derecha */
+    min-width: 100px; /* Ajusta el ancho mínimo para asegurar que los valores largos se alineen correctamente */
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Tabla de productos/servicios */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0px 0;
+    font-size: 14px;
+    list-style-type: none;
+}
+
+table th, table td {
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+table thead {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Términos comerciales */
+section h2 {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+ol li {
+    margin-bottom: 5px;
+    list-style-type: none;
+}
+
+/* Botón de PDF */
+button {
+    background-color: #3b9f3b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2d8f2d;
+}
+
+.table-contact {
+    margin-top: 30px;
+    width: 70%;
+    table-layout: fixed;
+}
+
+.table-contact li{
+    list-style-type: none;
+    padding-inline: .03px;
+    margin-left: 10px;
+    padding: 1.5px;
+}
+.table-contact td {
+    padding: 0.3px; /* Reduce el padding para evitar que crezca hacia arriba */
+    word-wrap: break-word;
+    text-align: left; /* Alinea el texto a la izquierda */
+    vertical-align: top; /* Alinea el texto en la parte superior de la celda */
+    white-space: nowrap; /* Previene el salto de línea automático */
+    overflow: hidden; /* Oculta el texto que exceda el ancho de la celda */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
+    max-height: 60px; /* Fija una altura máxima para las celdas */
+}
+
+.table-contact td[contenteditable="true"] {
+    white-space: pre-wrap; /* Permite saltos de línea si el usuario lo desea */
+    overflow-wrap: break-word; /* Para que las palabras largas se dividan correctamente */
+    vertical-align: top; /* Asegura que el contenido editable también comience en la parte superior */
+}
+.table-contact th {
+    background-color: #BDD7EE;
+    border-color: #000000;
+    padding: 1px;
+}
+.table-contact td {
+    border-color: #000000;
+}
+.seccion1{
+    /* margin-top: 20px; */
+    text-align: center;
+}
+.text-lowercase{
+    text-align: start;
+    font-size: 13px;
+}
+.examinacion{
+    margin-top: 0px;
+}
+.examinacion th{
+    background-color: #BDD7EE;
+    border-color: #000000;
+}
+.examinacion td{
+    border-color: #000000;
+}
+.terminos{
+    text-align: center;
+}
+
+.table-importeL {
+    width: 50%;
+    table-layout: fixed; /* Fija el ancho de las columnas */
+    text-align: center;
+    float: left;
+    margin-top: 9px;
+}
+
+.table-importeL-info {
+    margin-top: -19.5px;
+}
+
+.table-importeL td {
+    padding: fixed; /* Reduce el padding para evitar que crezca hacia arriba */
+    word-wrap: break-word;
+    text-align: left; /* Alinea el texto a la izquierda */
+    vertical-align: top; /* Alinea el texto en la parte superior de la celda */
+    white-space: nowrap; /* Previene el salto de línea automático */
+    overflow: hidden; /* Oculta el texto que exceda el ancho de la celda */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
+    max-height: 60px; /* Fija una altura máxima para las celdas */
+}
+
+.table-importeL td[contenteditable="true"] {
+    white-space: pre-wrap; /* Permite saltos de línea si el usuario lo desea */
+    overflow-wrap: break-word; /* Para que las palabras largas se dividan correctamente */
+    vertical-align: top; /* Asegura que el contenido editable también comience en la parte superior */
+}
+.table-importeL th {
+    background-color: #BDD7EE;
+    border-color: #000000;
+}
+.table-importeL td{
+    border-color: #000000;
+}
+
+.table-importe {
+    width: 34.2%;
+    table-layout: fixed; /* Fija el ancho de las columnas */
+    text-align: center;
+    float: right;
+    margin-top: 9px;
+}
+
+
+.table-importe td {
+    padding: fixed; /* Reduce el padding para evitar que crezca hacia arriba */
+    word-wrap: break-word;
+    text-align: left; /* Alinea el texto a la izquierda */
+    vertical-align: top; /* Alinea el texto en la parte superior de la celda */
+    white-space: nowrap; /* Previene el salto de línea automático */
+    overflow: hidden; /* Oculta el texto que exceda el ancho de la celda */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
+    max-height: 60px; /* Fija una altura máxima para las celdas */
+}
+
+.table-importe td[contenteditable="true"] {
+    white-space: pre-wrap; /* Permite saltos de línea si el usuario lo desea */
+    overflow-wrap: break-word; /* Para que las palabras largas se dividan correctamente */
+    vertical-align: top; /* Asegura que el contenido editable también comience en la parte superior */
+    list-style-type: none;
+}
+.table-importe th {
+    background-color: #BDD7EE;
+    border-color: #000000;
+}
+.table-importe td{
+    border-color: #000000;
+    text-align: start;
+    table-layout: fixed;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: fixed;
+}
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.select{
+    margin-right: 10px;
+}
+#cliente-data-list {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding-left: 0; /* Elimina el sangrado (indentación) de la lista */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+/* Estilo del botón discreto */
+.cliente-btn {
+    background-color: transparent;                    /* Color de texto suave */
+    padding: 0.5px;
+    border: 1px solid transparent;         /* Borde suave */
+    border-radius: 3px;             /* Bordes ligeramente redondeados */
+    cursor: pointer;                /* Ajusta su tamaño al contenido */
+    transition: background-color 0.2s ease;
+    position: center;
+}
+
+.cliente-btn:hover {
+    background-color: transparent;      /* Efecto hover muy sutil */
+}
+
+/* Estilos para el menú desplegable */
+#cliente-dropdown {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Opciones dentro del dropdown */
+.cliente-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.cliente-option:hover {
+    background-color: #f9f9f9;
+}
+.cliente-btn img {
+    width: 21.5px;  /* Ancho de la imagen */
+    height: auto; /* Ajusta la altura automáticamente */
+}
+/* Estilo para el botón más pequeño */
+.agregar {
+    font-size: 12px;      /* Tamaño de la fuente del botón */
+    padding: 5px 10px;    /* Tamaño del botón */
+    background-color: transparent; /* Color de fondo */
+    color: rgb(0, 0, 0);         /* Color del texto */
+    border-color: #000000;         /* Sin borde */
+    cursor: pointer;   /* Posicionamiento absoluto */
+    top: -30px;           /* Ajustar la posición en relación a la tabla */
+    margin-left: -725px;
+    margin-top: -10px;
+    left: 0;              /* Posicionar a la izquierda */
+}
+.agregar:hover {
+    background-color: #BDD7EE;
+}
+.descripcion-select {
+    width: 250px; /* Ajusta el ancho según tus necesidades */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+/* Asegúrate de que el select tenga una altura adecuada */
+.descripcion-select {
+    height: auto; /* Ajusta la altura automáticamente */
+}
+
+/* Opcional: Estiliza las opciones si es necesario */
+.descripcion-select option {
+    white-space: normal; /* Permite el ajuste de línea dentro de las opciones */
+}
+.descripcion-celda {
+    position: relative;
+    padding: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: 200px;
+    max-width: 300px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.descripcion-texto {
+    display: block;
+}
+
+.dropdown-descripcion {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.descripcion-lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.descripcion-lista li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.descripcion-lista li:hover {
+    background-color: #f0f0f0;
+}
+.dropdown {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 10;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none; /* Start hidden */
+}
+
+.dropdown div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdown div:hover {
+    background-color: #f0f0f0;
+}
+
+.celda-descripcion {
+    position: relative;
+    cursor: pointer;
+    /* background-color: #f9f9f9; Background to distinguish non-editable cells */
+    color: #333;
+    text-align: left;
+    padding: 5px;
+}
+
+.celda-descripcion input {
+    display: none; /* Hide input element */
+}
+.celdas {
+    text-align: center; /* Alinea el texto a la izquierda */
+}
+
+.terminos {
+    text-align: center;
+    position: inherit;
+}
+
+.terminos h2 {
+    display: inline-block;
+    background-color: #BDD7EE;
+    padding: 0 250px; /* Ajusta este valor según el espacio que quieras alrededor del texto */
+    line-height: 1.5;
+    margin: 0px;
+    margin-top: 10px;
+}
+#terminos-lista {
+    text-align: left; /* Alinear el texto de la lista principal a la izquierda */
+    list-style-position: inside; /* Cambiar la posición del marcador a dentro del bloque */
+}
+
+#terminos-lista li {
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+}
+
+#terminos-lista .condiciones-pago,
+#terminos-lista .forma-pago {
+    margin-left: -40px; /* Indentación para las sublistas */
+}
+
+.firma-conformidad {
+    display: inline-block; /* Mantener inline-block para que el fondo se ajuste al texto */
+    background-color: #FFFF00; /* Color de fondo */
+    padding: 1px 20px; /* Espacio alrededor del texto; ajusta según necesites */
+    line-height: 1.5; /* Altura de línea */
+    margin: 0; /* Sin márgenes */
+    font-size: 12px; /* Tamaño de fuente */
+    font-size: 10px;
+}
+.firma-editable{
+    font-family: 'Bahnschrift SemiBold SemiConden';
+    font-weight: bold;
+}
+.importes{
+    margin-top: 10px;
+}
+.solicitud{
+    margin-top: 90px;
+}

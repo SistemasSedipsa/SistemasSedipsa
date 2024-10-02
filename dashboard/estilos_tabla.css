@@ -1,0 +1,236 @@
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+}
+
+table thead {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    /* Blanco */
+    color: #333;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.btn {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-primary.btn-sm,
+.btn-warning.btn-sm {
+    transition: all 0.3s ease;
+}
+
+.list-group-item {
+    margin-bottom: 10px;
+}
+
+.btn-primary.btn-sm:hover,
+.btn-warning.btn-sm:hover {
+    opacity: 0.8;
+}
+
+.modal-content {
+    border-radius: 0.5rem;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-header.replace-header {
+    background-color: #ffc107;
+    color: black;
+}
+
+.modal-footer .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+.pdf-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.pdf-item a {
+    margin-right: 10px;
+}
+
+.pdf-item span {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.modal-header {
+    background-color: #343a40;
+    color: white;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.btn-dark {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #e0a800;
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.accessory-item {
+    margin-bottom: 15px;
+    /* Espacio entre accesorios */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.alert {
+    display: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.accessory-group {
+    border-bottom: 1px solid #000000;
+    /* Línea de separación */
+    padding-bottom: 15px;
+    /* Espacio debajo del grupo */
+    margin-bottom: 15px;
+    /* Espacio entre grupos */
+}
+
+.btn-red {
+    background-color: #dc3545;
+    /* Color rojo */
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-green {
+    background-color: #28a745;
+    /* Color verde */
+    border-color: #28a745;
+    color: white;
+}
+
+.btn-blue {
+    background-color: #007bff;
+    /* Color azul */
+    border-color: #007bff;
+    color: white;
+}
+
+.btn-red:hover,
+.btn-green:hover,
+.btn-blue:hover {
+    opacity: 0.8;
+    /* Efecto hover */
+}
+/* CSS para fila-vigente */
+.fila-vigente {
+    background-color: #c8e6c9 !important; /* Verde claro */
+}
+
+/* CSS para fila-vencido */
+.fila-vencido {
+    background-color: #ffcdd2 !important; /* Rojo claro */
+}
